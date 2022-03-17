@@ -145,18 +145,20 @@
 </script>
 </head>
 <body>
-	<div class="chartBox" style="width: 1200px; height: 500px;float:right; margin-right:30px;">
+	<div class="chartBox" style="width: 1200px; height: 500px;float:right; margin-right:30px;"> 
 	    <form name="input" method = "POST" >
-	        <h2>차량 모니터링 </h2>
-	            <div style="width: 1000px; height:20px;float:right;">	        		
-	            <input type="radio" name="chart_choice" id="pro1" value="s" onclick="chart(this.id)" >EnginRpm
-	            <input type="radio" name="chart_choice" id="pro2" value="m" onclick="chart(this.id)" >fuelLevel
-	            <input type="radio" name="chart_choice" id="pro3" value="l" onclick="chart(this.id)" >Vehicle Speed</div>
-	            <div style="width: 1000px; height: 500px;margin-right:30;float:right"><canvas id="myChart"></canvas></div>
+	        <h2>차량 모니터링</h2>
+	            <div style="width: 1000px; height:20px;float:right;">         		
+		            <input type="radio" name="chart_choice" id="pro1" value="s" onclick="chart(this.id)" >EnginRpm
+		            <input type="radio" name="chart_choice" id="pro2" value="m" onclick="chart(this.id)" >fuelLevel
+		            <input type="radio" name="chart_choice" id="pro3" value="l" onclick="chart(this.id)" >Vehicle Speed</div>
+	            <div style="width: 1000px; height: 500px;margin-right:30;float:right"> 
+	            	<canvas id="myChart"></canvas>
+	            </div>
 	            <div style="width: 100px; height:210px;margin-top:200px;margin-left:30;float:left">
-	            <label><input type="radio" name="time_set" id="ms" onclick="timeSet()" style="margin:0;vertical-align:middle;" checked>Millisecond</label>
-	            <label><input type="radio" name="time_set" id="s" onclick="timeSet()" style="margin-right:10px;vertical-align:middle;">Second</label>
-	            <label><input type="radio" name="time_set" id="m" onclick="timeSet()" style="margin:0;vertical-align:middle;">Minute</label>
+		            <label><input type="radio" name="time_set" id="ms" onclick="timeSet()" style="margin:0;vertical-align:middle;" checked>Millisecond</label>
+		            <label><input type="radio" name="time_set" id="s" onclick="timeSet()" style="margin-right:10px;vertical-align:middle;">Second</label>
+		            <label><input type="radio" name="time_set" id="m" onclick="timeSet()" style="margin:0;vertical-align:middle;">Minute</label>
 	            </div>
 	    </form>
 	</div>

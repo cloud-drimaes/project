@@ -42,7 +42,7 @@ public class HomeController {
     /**
      * Simply selects the home view to render by returning its name.
      */
-    //"https://favicon.io/" 에서 파비콘 다운로드
+    //"https://favicon.io/" �뿉�꽌 �뙆鍮꾩퐯 �떎�슫濡쒕뱶
     @RequestMapping("/favicon.ico")
     public String favicon() {
     	return "forward:/resources/favicon.ico";
@@ -52,6 +52,7 @@ public class HomeController {
     public String home(Locale locale, Model model) throws Exception{
  
         logger.info("home");
+        //logger.info("index");
         
         List<fuelVO> fuelList = service.selectFuel();
         List<infoVO> infoList = infoDao.getInfo();
@@ -60,9 +61,10 @@ public class HomeController {
         model.addAttribute("infoList", infoList);
  
         return "home";
+        //return "index";
     }
     
-	// 1. Httpservlet의 request 활용해 파라미터 받아오기
+	// 1. Httpservlet�쓽 request �솢�슜�빐 �뙆�씪誘명꽣 諛쏆븘�삤湲�
 	@GetMapping("regist")
 	public void getRegist() {}
 	
@@ -79,6 +81,7 @@ public class HomeController {
        model.addAttribute("infoList", infoList);
 
 		return "/messageResult";
+		//return "/index_messageResult";
 	} 
 }
     

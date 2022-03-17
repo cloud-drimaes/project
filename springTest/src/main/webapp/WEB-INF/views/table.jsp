@@ -18,7 +18,7 @@
 <button type="submit" style="width:50x; margin-left:200px;margin-top:30px;float:left">확인</button>
 </form>
 
-<table  style="width: 500px; height: 300px;margin: 30px; ">
+<table style="width: 500px; height: 300px;margin: 30px; "> 
     <tbody>
 	        <tr>
 	            <td bgcolor="gray">운전자</td>
