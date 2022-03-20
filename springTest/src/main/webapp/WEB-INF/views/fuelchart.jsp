@@ -29,7 +29,7 @@
 				let fuelList = [];
 			
 				$.ajax({
-					url:"http://localhost:8080/fuelLevelList",
+					url:"http://localhost:58080/fuelLevelList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",

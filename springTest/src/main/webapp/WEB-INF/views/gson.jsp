@@ -185,7 +185,7 @@
 			let rpmList = [];
 			function getGraph(){
 				$.ajax({
-					url:"http://localhost:8080/gsonList",
+					url:"http://localhost:58080/gsonList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",
@@ -212,7 +212,7 @@
 			let fuelList = [];			
 			function getGraph2(){
 				$.ajax({
-					url:"http://localhost:8080/fuelList",
+					url:"http://localhost:58080/fuelList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",
@@ -239,7 +239,7 @@
 			let speedList = [];			
 			function getGraph3(){
 				$.ajax({
-					url:"http://localhost:8080/speedList",
+					url:"http://localhost:58080/speedList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",

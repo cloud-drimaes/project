@@ -163,6 +163,17 @@
 	            </div>
 	    </form>
 	</div>
+	<form action="regist" method="post">
+		<c:if test="${!empty infoList}" >
+		   <select name="selectBox" style="width:200px; margin:30px;float:left" onchange="selectRoute(this)">
+	   		  <option value='abc'>선택안함</option>
+		      <c:forEach var="infoList" items="${infoList}" varStatus="i">
+		         <option value="${infoList.route}">${infoList.route}</option>
+		      </c:forEach>
+		   </select>
+		</c:if>
+		<button type="submit" style="width:50x; margin-left:200px;margin-top:30px;float:left">확인</button>
+	</form>
 	<table  style="width: 500px; height: 300px;margin: 30px; ">
     <tbody>
         <c:set var="route" value="${message}" />
@@ -202,7 +213,7 @@
 
 			
 				$.ajax({
-					url:"http://localhost:8080/gsonList",
+					url:"http://localhost:58080/gsonList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",
@@ -235,7 +246,7 @@
 			function getGraph2(){
 
 				$.ajax({
-					url:"http://localhost:8080/fuelList",
+					url:"http://localhost:58080/fuelList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",
@@ -269,7 +280,7 @@
 
 			
 				$.ajax({
-					url:"http://localhost:8080/speedList",
+					url:"http://localhost:58080/speedList",
 					type:"get",
 					dataType:"json",
 					contentType:"application/json;cahrset=utf-8",

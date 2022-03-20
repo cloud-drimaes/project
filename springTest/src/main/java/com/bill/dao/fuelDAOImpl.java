@@ -1,5 +1,6 @@
 package com.bill.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,6 +23,17 @@ public class fuelDAOImpl implements fuelDAO {
  
         return sqlSession.selectList(Namespace+".selectFuel");
     }
+
+	@Override
+	public void mqttInsertFuel(HashMap<String, Object> param) throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			sqlSession.insert(Namespace+".mqttInsertFuel", param);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
  
 }
 

@@ -1,5 +1,6 @@
 package com.bill.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -20,6 +21,18 @@ public class fuelServiceImpl implements fuelService {
  
         return dao.selectFuel();
     }
+
+	@Override
+	public void mqttInsertFuel(HashMap<String, Object> param) throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			System.out.println("----------fuelService----------");
+			dao.mqttInsertFuel(param);
+		}catch (Exception e) {
+			// TODO: handle exception 
+			e.printStackTrace(); 
+		}
+	}
  
 }
 

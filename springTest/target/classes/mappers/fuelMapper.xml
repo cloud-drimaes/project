@@ -19,6 +19,12 @@
         SELECT time,Fuel,route FROM concat WHERE Fuel NOT IN('')
     </select>
  
+    <insert id="mqttInsertFuel" parameterType="String">
+    	INSERT INTO concat(time, Fuel, route, driver) 
+    	VALUES (#{time}, #{Fuel}, #{route}, #{driver}) 
+    	
+    </insert>
+ 
  
     
 </mapper>
