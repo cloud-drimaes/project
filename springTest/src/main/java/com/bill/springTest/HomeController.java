@@ -181,7 +181,7 @@ public class HomeController implements MqttCallback {
 		if(!messageInsertToDB(topic, message)) {
 			System.out.println("---------메세지 저장 실패!!!!!!!"); 
 		}else {
-			System.out.println("---------메세지 저장 성공!!!!!!!"); 
+			System.out.println("---------메세지 저장 성공!!!!!!! "); 
 		};
 	}
 
