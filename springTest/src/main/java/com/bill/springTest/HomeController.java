@@ -68,7 +68,8 @@ public class HomeController implements MqttCallback {
     	
     	// 서버가 시작되면 broker를 구독한다. 
     	//Mqtt_Sub_Client mqttSubClient = new Mqtt_Sub_Client();
-    	init("tcp://61.42.251.202:1883", "daisy-sub").subscribe("test/#");
+    	//init("tcp://61.42.251.202:1883", "daisy-sub").subscribe("test/#");
+    	init("tcp://192.168.100.131:1883", "daisy-sub").subscribe("test/#");
     	
         logger.info("home");
         //logger.info("index");
@@ -81,6 +82,11 @@ public class HomeController implements MqttCallback {
  
         return "home";
         //return "index";
+    }
+    
+    @RequestMapping(value ="/index")
+    public String index(Locale locale, Model model) throws Exception {
+    	return "/index_main";
     }
     @RequestMapping(value = "/home_MQTT")
     public String MQTT(Locale locale, Model model) throws Exception{
@@ -112,7 +118,6 @@ public class HomeController implements MqttCallback {
 	 */
     
     
-	// 1. Httpservlet�쓽 request �솢�슜�빐 �뙆�씪誘명꽣 諛쏆븘�삤湲�
 	@GetMapping("regist")
 	public void getRegist() {}
 	
@@ -173,8 +178,6 @@ public class HomeController implements MqttCallback {
 		System.out.println(message);
 		System.out.println("topic : " + topic + ", id : " + message.getId() + ", payload : " + new String(message.getPayload()));
 		
-		System.out.println("---------메세지 저장 메소드.---------");
-		
 		if(!messageInsertToDB(topic, message)) {
 			System.out.println("---------메세지 저장 실패!!!!!!!"); 
 		}else {
@@ -192,18 +195,46 @@ public class HomeController implements MqttCallback {
 		boolean insertSuccess = true; 
 		
 		
-		String[] topicArr = topic.split("test/")[1].split("/");
-		String[] payload = new String(message.getPayload()).split("/");
+		String[] topicArr = topic.split("test/")[1].split("/"); // test/driver/route/time -> test/, driver/route/time -> driver, route, time
+		String[] payload = new String(message.getPayload()).split("/"); // driver1/route1/121210 -> driver1, route1, 121210
 
 		HashMap<String, Object> mqttMap = new HashMap<>(); 
 		
 		for(int i = 0; i < topicArr.length; i++) {
 			mqttMap.put(topicArr[i], payload[i]);
 		}
-
-		try {
+		
+		try 
+		{
 			System.out.println(mqttMap);
+	
 			service.mqttInsertFuel(mqttMap);
+			/*
+			if(topicArr[3].equals("RPM")) {
+			} else if(topicArr[3].equals("Speed")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("Runtime")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("Fuel")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("Temperature")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("coolantTemp")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("idling")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("batteryVolt")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("batteryTemp")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("torque")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("horsePower")) {
+				service.mqttInsertFuel(mqttMap);
+			} else if(topicArr[3].equals("Latitude")) {
+				service.mqttInsertFuel(mqttMap);
+			}
+		*/
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

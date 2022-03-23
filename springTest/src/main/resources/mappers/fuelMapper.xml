@@ -26,5 +26,47 @@
     </insert>
  
  
+    <insert id="mqttInsertData" parameterType="String">
+    	INSERT INTO mqttdata (
+    		DRIVER,
+    		ROUTE, 
+    		TIME, 
+    		RPM, 
+    		SPEED, 
+    		RUNTIME, 
+    		FUEL, 
+    		TEMPERATURE, 
+    		COOLANTTEMP, 
+    		IDLING, 
+    		BATTERYVOLT, 
+    		BATTERYTEMP, 
+    		TORQUE, 
+    		HORSEPOWER, 
+    		LATITUDE, 
+    		LONGITUDE, 
+    		ALTITUDE 
+    	)VALUES (
+    		#{driver},
+    		#{route}, 
+    		#{time}, 
+    		#{RPM, jdbcType = VARCHAR}, 
+    		#{Speed, jdbcType = VARCHAR}, 
+    		#{Runtime, jdbcType = VARCHAR}, 
+    		#{Fuel, jdbcType = VARCHAR}, 
+    		#{Temperature, jdbcType = VARCHAR}, 
+    		#{coolantTemp, jdbcType = VARCHAR}, 
+    		#{idling, jdbcType = VARCHAR}, 
+    		#{batteryVolt, jdbcType = VARCHAR}, 
+    		#{batteryTemp, jdbcType = VARCHAR}, 
+    		#{torque, jdbcType = VARCHAR}, 
+    		#{horsePower, jdbcType = VARCHAR}, 
+    		#{Latitude, jdbcType = VARCHAR}, 
+    		#{Longitude, jdbcType = VARCHAR}, 
+    		#{Altitude, jdbcType = VARCHAR}
+   		) 
+    	
+    </insert>
+ 
+ 
     
 </mapper>

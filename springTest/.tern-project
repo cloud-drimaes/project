@@ -1,0 +1,48 @@
+{
+  "ecmaVersion": 5,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "outline": {
+      
+    },
+    "chrome-apps": {
+      
+    },
+    "chrome-extension": {
+      
+    },
+    "node": {
+      
+    },
+    "lint": {
+      
+    },
+    "browser-extension": {
+      
+    },
+    "node-express": {
+      
+    },
+    "gcharts": {
+      
+    },
+    "node-extension": {
+      
+    },
+    "jquery-ui1-12": {
+      
+    },
+    "jquery-extension": {
+      
+    },
+    "jquery-mobile1.5": {
+      
+    }
+  },
+  "libs": [
+    "browser",
+    "jquery"
+  ]
+}

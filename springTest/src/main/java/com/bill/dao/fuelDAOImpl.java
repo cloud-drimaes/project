@@ -28,7 +28,7 @@ public class fuelDAOImpl implements fuelDAO {
 	public void mqttInsertFuel(HashMap<String, Object> param) throws Exception {
 		// TODO Auto-generated method stub
 		try {
-			sqlSession.insert(Namespace+".mqttInsertFuel", param);
+			sqlSession.insert(Namespace+".mqttInsertData", param);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
